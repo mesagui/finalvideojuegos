@@ -3,6 +3,7 @@ package com.example.mapsapp.personajes;
 public class Pokemon {
     public String nombre;
     public String tipo;
+    public String imagen;
     public String url_imagen;
     public Number latitude;
     public Number longitude;
@@ -11,9 +12,10 @@ public class Pokemon {
     }
     
 
-    public Pokemon(String nombre, String tipo, String url_imagen, Number latitude, Number longitude) {
+    public Pokemon(String nombre, String tipo, String imagen, Number latitude, Number longitude, String url_imagen) {
         this.nombre = nombre;
         this.tipo = tipo;
+        this.imagen = imagen;
         this.url_imagen = url_imagen;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -36,11 +38,19 @@ public class Pokemon {
     }
 
     public String getImagen() {
-        return url_imagen;
+        return imagen;
     }
 
     public void setImagen(String imagen) {
-        this.url_imagen = imagen;
+        this.imagen = imagen;
+    }
+
+    public String getImagenUrl() {
+        return "https://upn.lumenes.tk" + url_imagen;
+    }
+
+    public void setImagenUrl(String url_imagen) {
+        this.url_imagen = url_imagen;
     }
 
     public Number getLatitude() {

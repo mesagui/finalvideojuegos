@@ -36,6 +36,11 @@ public class RecyclerViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
 
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://upn.lumenes.tk/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
         recyclerView = findViewById(R.id.rvPokemons);
         imageView = findViewById(R.id.igPokemon);
         textView = findViewById(R.id.tvPokemons);
@@ -45,10 +50,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://upn.lumenes.tk/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
 
         PokemonService service = retrofit.create(PokemonService.class);
         Call<List<Pokemon>> call = service.getByQuery("abc");

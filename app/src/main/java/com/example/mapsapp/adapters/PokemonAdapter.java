@@ -52,7 +52,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.PokemonV
         imagen = holder.itemView.findViewById(R.id.igPokemon);
         Pokemon pokemon = listaPokemons.get(position);
         nombre.setText(pokemon.getNombre());
-        urlImage = pathImage + pokemon.getImagen();
+        urlImage = pokemon.getImagenUrl();
         tipo.setText(pokemon.getTipo());
         Glide.with(context).load(urlImage).into(imagen);
 

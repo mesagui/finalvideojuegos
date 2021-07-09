@@ -35,13 +35,13 @@ public class DetalleActivity extends AppCompatActivity {
         ivImagen = findViewById(R.id.ivImage);
         context = this.getApplicationContext();
         btnUbicacion = findViewById(R.id.btnUicacion);
-      //  path = "https://upn.lumenes.tk/";
+        path = "";
 
         Intent intent = getIntent();
         String pokemon = intent.getStringExtra("Pokemon");
         Pokemon pkm = new Gson().fromJson(pokemon, Pokemon.class);
 
-        urlImage = path + pkm.getImagen();
+        urlImage = pkm.getImagenUrl();
         tvNombre.setText(pkm.getNombre());
         tvTipo.setText(pkm.getTipo());
         tvNombre.setText(pkm.getNombre());
