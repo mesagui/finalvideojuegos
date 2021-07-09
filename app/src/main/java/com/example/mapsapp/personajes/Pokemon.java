@@ -9,6 +9,7 @@ public class Pokemon {
 
     public Pokemon() {
     }
+    
 
     public Pokemon(String nombre, String tipo, String url_imagen, Number latitude, Number longitude) {
         this.nombre = nombre;

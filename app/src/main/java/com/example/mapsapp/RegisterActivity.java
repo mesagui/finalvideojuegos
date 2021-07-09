@@ -86,8 +86,8 @@ public class RegisterActivity extends AppCompatActivity {
                 pokemon.setNombre(etName.getText().toString());
                 pokemon.setTipo(etType.getText().toString());
                 pokemon.setImagen(fileBase64);
-                pokemon.setLatitude(Float.parseFloat(etLatitude.getText().toString()) * -1);
-                pokemon.setLongitude(Float.parseFloat(etLongitude.getText().toString()) * -1);
+                pokemon.setLatitude(Float.parseFloat(etLatitude.getText().toString()));
+                pokemon.setLongitude(Float.parseFloat(etLongitude.getText().toString()));
 
                 Call<Pokemon> call = service.create(pokemon);
 
@@ -134,7 +134,7 @@ public class RegisterActivity extends AppCompatActivity {
             imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
             //Añadir a base64
             fileBase64 = gtFile(picturePath);
-
+            Log.i("MY_APP",fileBase64);
         }
     }
     public static String gtFile(String filePath){
@@ -147,7 +147,7 @@ public class RegisterActivity extends AppCompatActivity {
             bos = new ByteArrayOutputStream();
             bmp.compress(Bitmap.CompressFormat.PNG,100, bos);
             bt = bos.toByteArray();
-            encodeString = Base64.encodeToString(bt, Base64.NO_WRAP);
+            encodeString = Base64.encodeToString(bt, Base64.DEFAULT);
         }
         catch (Exception e){
             e.printStackTrace();

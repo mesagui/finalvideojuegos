@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
+
     <Button
         android:id="@+id/btnGallery"
         android:layout_width="wrap_content"

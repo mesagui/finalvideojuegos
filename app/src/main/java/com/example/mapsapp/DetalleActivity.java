@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -34,7 +35,7 @@ public class DetalleActivity extends AppCompatActivity {
         ivImagen = findViewById(R.id.ivImage);
         context = this.getApplicationContext();
         btnUbicacion = findViewById(R.id.btnUicacion);
-        path = "https://upn.lumenes.tk";
+      //  path = "https://upn.lumenes.tk/";
 
         Intent intent = getIntent();
         String pokemon = intent.getStringExtra("Pokemon");
@@ -45,7 +46,7 @@ public class DetalleActivity extends AppCompatActivity {
         tvTipo.setText(pkm.getTipo());
         tvNombre.setText(pkm.getNombre());
         Glide.with(context).load(urlImage).into(ivImagen);
-
+        Log.i("MY_APP",urlImage);
         btnUbicacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

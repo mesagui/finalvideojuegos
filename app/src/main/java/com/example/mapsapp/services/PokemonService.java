@@ -11,12 +11,14 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface PokemonService {
-    @GET("pokemons/N00035221/")
+    @GET("pokemons/00039842/")
     Call<List<Pokemon>> getALL();
 
-    @GET("pokemons/N00035221/")
+
+    @GET("pokemons/00039842/")
     Call<List<Pokemon>> getByQuery(@Query("query") String query);
 
-    @POST("pokemons/N00035221/crear")
+
+    @POST("pokemons/00039842/crear")
     Call<Pokemon> create(@Body Pokemon pokemon);
 }
